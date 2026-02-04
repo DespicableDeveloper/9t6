@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="assets/sweetalert.min.css"> -->
+    <link rel="stylesheet" href="assets/sweetalert.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        label.error {
+            color: red;
+        }
+
+        input.error {
+            border: 1.5px solid #fb4c4c;
+        }
+
+        input.valid {
+            border: 1.5px solid #75FB4C;
+
+        }
+
+        .form-control:focus {
+            border: 1px solid #dee2e6;
+            box-shadow: none !important;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container border my-5 p-3 w-75">
+        <form id="formsubmission">
+
+
+            <h2 class="my-2 text-center text-success">Contact Form</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-label">FullName</label>
+                        <input type="text" class="form-control " name="fullname" placeholder="Enter FullName">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <div style="position: relative;">
+
+                            <input type="text" class="form-control passwordz" name="password"
+                                placeholder="Enter Password">
+                            <button id="iconbtn" style="position: absolute; top: 0px; right: 0px;"
+                                class="btn btn-success rounded-start-0 h-auto d-flex justify-content-center align-items-center">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#fff">
+                                    <path id="iconpassword"
+                                        d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
+                                </svg>
+                            </button>
+
+                            <!-- m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="text" class="passwordz form-control" name="con_password"
+                            placeholder="Enter Confirm Password">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <button type="submit" id="formbtn" class="btn btn-success my-2 d-block w-25 fw-bold mx-auto "
+                disabled>Submit</button>
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="assets/sweetalert.min.js"></script>
+    <script src="assets/validation.min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.all.min.js"></script> -->
+    <!-- <script src="assets/sweetalert.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('button').click(function () {
+                Swal.fire({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "error",
+                    theme:"bulma"
+                });
+            });
+        });
+
+    </script> -->
+    <script>
+
+        $(document).ready(function () {
+            let hideicon = "m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z";
+            let showicon = "M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z";
+
+            let button = $("#iconpassword")[0];
+            let input = $(".passwordz")[0];
+            let input1 = $(".passwordz")[1];
+            $("#iconbtn").click(function () {
+                let seticon = button.getAttribute("d");
+
+                if (seticon === showicon) {
+                    button.setAttribute("d", hideicon);
+                    input.setAttribute("type", "text");
+                    input1.setAttribute("type", "text");
+                }
+                else {
+                    button.setAttribute("d", showicon);
+                    input.setAttribute("type", "password");
+                    input1.setAttribute("type", "password");
+                }
+            });
+
+        });
+    </script>
+
+
+
+    <script>
+
+        $.validator.addMethod("strongPassword", function (value, element) {
+            return this.optional(element) || 
+            /^(?=(?:.*[A-Z]))(?=(?:.*[a-z]){9,})(?=(?:.*[1-9]){3,})(?=.*[!@#$%^*&])[A-Za-z1-9!@#$%^*&]{14}$/.test(value)    
+        }
+    
+    );
+
+        $(document).ready(function () {
+
+
+            let form = $("#formsubmission");
+            let formbtn = $("#formbtn");
+
+
+            function togglebtn() {
+                if (form.valid()) {
+                    formbtn.prop("disabled", false).addClass("enabled");
+                }
+                else {
+                    formbtn.prop("disabled", true).addClass("enabled");
+                }
+            }
+
+
+            form.validate({
+                onkeyup: function (element) {
+                    this.element(element);
+                    togglebtn()
+                },
+                onclick: function (element) {
+                    this.element(element);
+                    togglebtn()
+                },
+
+                rules: {
+                    fullname: {
+                        required: true,
+                        minlength: 10,
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        strongPassword:true
+
+                    },
+                    con_password: {
+                        required: true,
+                        equalTo: "[name='password']"
+                    }
+                },
+                messages: {
+                    fullname: {
+                        required: "FullName is Required",
+                        minlength: "bhai jan 10 character wala name likho ",
+
+                    },
+                    email: {
+                        required: "Email is Required",
+                        email: "Bhai Correct Email Add kr"
+                    },
+                    password: {
+                        required: "Password is Required",
+                        strongPassword:"First Letter is Capital , Minimum Insert 9 Character , 3 numbers , 1 special character",
+
+                    },
+                    con_password: {
+                        required: "Confirm Password is Required",
+                        equalTo: "Password Same Nhi Hai"
+                    }
+                },
+                submitHandler: function () {
+                    Swal.fire({
+                        title: "Good job!",
+                        text: `thanks! `,
+                        icon: "success",
+
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form[0].reset();
+                        }
+                    });
+                    alert("form submitted successfully");
+                    form.reset();
+
+
+
+                }
+
+
+
+            });
+
+
+
+        });
+    </script>
+</body>
+
+</html>
